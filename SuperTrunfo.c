@@ -54,7 +54,7 @@ int main(){
 
     printf("Carta 2\n");
     printf("Escolha uma letra maiúscula de A à H para representar seu Estado:\n");
-    scanf(" %c", &estado2);//scanf(" %c", &letra); // O espaço ignora espaços em branco e ENTERs pendentes
+    scanf(" %c", &estado2);//scanf(" %c", &estado2); // O espaço ignora espaços em branco e ENTERs pendentes
     /*Se antes de scanf("%c", &variavel); você usou um scanf 
     para ler um número (%d) ou uma string (%s), o ENTER (\n) 
     que o usuário digitou pode ficar preso no buffer e ser consumido pelo %c.Para corrigir use um espaço antes de %c no scanf:*/
