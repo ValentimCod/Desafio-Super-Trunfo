@@ -17,6 +17,9 @@ int main(){
     float area_em_km1 = 2312333, area_em_km2 = 1234511;
     float pib1 = 2323123, pib2 = 123.23;
     int pontos_turisticos1 = 50, pontos_turisticos2 = 50;
+// Adicionando mais duas variáveis para caucular a Densidade Populacional e calcular o PIB per Capita.
+    float densidadepopulacao1 = 123131, densidadepopulacao2 = 23123;
+    float pibCapita1 = 313123, pibCapita2 = 12323;
 
     printf("Desafio Super Trunfo Cidades\n");
 
@@ -49,6 +52,7 @@ int main(){
 
     printf("Digite o quantidade de pontos turísticos:\n");
     scanf("%d", &pontos_turisticos1);
+
 
     printf("----------------------------\n");
 
@@ -88,9 +92,16 @@ int main(){
   printf("Código:%s\n", codigo_da_carta1);
   printf("Nome da Cidade:%s\n", nome_da_cidade1 );
   printf("População:%d\n", populacao1);
-  printf("Área em Km:%f\n", area_em_km1);
-  printf("PIB:%f\n", pib1);
+  printf("Área em Km:%.1f\n", area_em_km1);
+  printf("PIB:%.1f\n", pib1);
   printf("Número de pontos turísticos:%d\n", pontos_turisticos1);
+
+//Calculando a densidade Populacional e PIB per Capita e adicinando com as informações da carta 1!
+  densidadepopulacao1 = area_em_km1 / populacao1;
+  printf("Densidade Populacional: %.1f hab/km²\n ", densidadepopulacao1);
+
+  pibCapita1 = pib1 / populacao1;
+  printf("PIB per Capita: %.1freais\n",pibCapita1);
 
   printf("------------------------------\n");
 
@@ -99,9 +110,16 @@ int main(){
   printf("Código:%s\n", codigo_da_carta2);
   printf("Nome da Cidade:%s\n", nome_da_cidade2);
   printf("População:%d\n", populacao2);
-  printf("Área em Km:%f\n", area_em_km2);
-  printf("PIB:%f\n", pib1);
+  printf("Área em Km:%.1f\n", area_em_km2);
+  printf("PIB:%.1f\n", pib1);
   printf("Número de pontos turísticos:%d\n", pontos_turisticos2);
+
+//Calculando a densidade Populacional e PIB per Capita e adicinando com as informações da carta 2 !
+densidadepopulacao2 = area_em_km2 / populacao2;
+printf("Densidade Populacional: %.1f hab/km²\n", densidadepopulacao2);
+
+pibCapita2 = pib2 / populacao2;
+printf("PIB per Capita:%.1freais\n", pibCapita2);
 
   printf("------------------------------\n");
   
