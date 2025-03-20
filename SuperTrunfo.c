@@ -166,6 +166,24 @@ printf("\n");
     printf("------------------------------\n\n");
 
 //*******************Comparação dos atributos das Cartas***************
+
+// Implementando a lógica de comparação com if-else !!!
+
+    printf("Comparação de cartas (Atributo: População)\n");
+printf("\n");
+    printf("Carta 1 - %s (%c): %lu\n",nome_da_cidade1, estado1, populacao1);
+printf("\n");
+    printf("Carta 2 - %s (%c): %lu\n",nome_da_cidade2, estado2, populacao2);
+printf("\n");
+if ( populacao1 > populacao2 ){
+    printf("Resultado: Carta 1 (%s) venceu !!!\n", nome_da_cidade1);
+    } else {
+    printf("Resultado: Carta 2 (%s) venceu !!!\n", nome_da_cidade2);
+    }
+
+
+// Lógica de comparação simples
+/*
     printf("**************Coparação das cartas****************\n");
     printf("\n");
 
@@ -205,6 +223,7 @@ printf("\n");
     int ResultadoSuperPoder;
         ResultadoSuperPoder = SuperPoder1 > SuperPoder2;
     printf("Super Poder: %d\n", ResultadoSuperPoder);
+*/
 
 
 printf("------------------------------\n");
