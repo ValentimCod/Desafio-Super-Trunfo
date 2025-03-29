@@ -165,23 +165,107 @@ printf("\n");
     
     printf("------------------------------\n\n");
 
+
+
+
+
+
+
+//Menu Íterativo
+
+    int opcao1, opcao2;
+    float valor1, valor2;
+
+    printf("#### Escolha um atributo para a carta 1!!! #####\n");
+    printf("--------------------------------------------------------------------------------------------------------\n");
+    printf("Carta 1\n");
+    printf("1. População\n");
+    printf("2. Área\n");
+    printf("3. Pib\n");
+    printf("4. Pontos Turísticos\n");
+    printf("5. Densidade Populacional\n");
+    printf("Escolha: ");
+    scanf("%d", &opcao1);
+
+printf("#### Escolha uma opção para comparar os atributos e definir qual carta será a vencedora !!! #####\n");
+    printf("--------------------------------------------------------------------------------------------------------\n");
+    printf("Carta 2\n");
+    printf("1. População\n");
+    printf("2. Área\n");
+    printf("3. Pib\n");
+    printf("4. Pontos Turísticos\n");
+    printf("5. Densidade Populacional\n");
+    printf("Escolha:\n");
+    scanf("%d", &opcao2);
+
+    switch (opcao1){
+case 1:
+    valor1 = populacao1;
+    break;
+case 2:
+    valor1 = area_em_km1;
+    break;
+case 3:
+    valor1 = pib1;
+    break;
+case 4:
+    valor1 = pontos_turisticos1;
+    break;
+case 5:
+    valor1 =  densidadepopulacao1;
+    break;
+default:
+        printf("Opção ínvalida para a carta 1!!!!\n");
+    break;
+}
+
+
+    switch (opcao2){
+case 1:
+        valor2 = populacao2;
+        break;
+case 2:
+        valor2 = area_em_km2;
+        break;
+case 3:
+        valor2 = pib2;
+        break;
+case 4:
+        valor2 = pontos_turisticos2;
+        break;
+case 5:
+        valor2 = densidadepopulacao2;
+        break;
+default:
+        printf("Opção ínvalida para a carta 2!!!\n");
+        break;
+}
+
+
 //*******************Comparação dos atributos das Cartas***************
+
+    printf("\nComparação entre:\n");
+    printf("%s (atributo %d): %.2f vs %s (atributo %d): %.2f\n",nome_da_cidade1, opcao1, valor1, nome_da_cidade2, opcao2, valor2);
 
 // Implementando a lógica de comparação com if-else !!!
 
-    printf("Comparação de cartas (Atributo: População)\n");
-printf("\n");
-    printf("Carta 1 - %s (%c): %lu\n",nome_da_cidade1, estado1, populacao1);
-printf("\n");
-    printf("Carta 2 - %s (%c): %lu\n",nome_da_cidade2, estado2, populacao2);
-printf("\n");
-if ( populacao1 > populacao2 ){
-    printf("Resultado: Carta 1 (%s) venceu !!!\n", nome_da_cidade1);
+if (opcao1 == 5 || opcao2 == 5) { // Comparação especial para densidade demográfica
+    if (valor1 < valor2) {
+        printf("Vencedor: %s\n", nome_da_cidade1);
+    } else if (valor1 > valor2) {
+        printf("Vencedor: %s\n", nome_da_cidade2);
     } else {
-    printf("Resultado: Carta 2 (%s) venceu !!!\n", nome_da_cidade2);
+        printf("Empate!\n");
     }
-
-
+} else { // Comparação padrão para os outros atributos
+    if (valor1 > valor2) {
+        printf("Vencedor: %s\n", nome_da_cidade1);
+    } else if (valor1 < valor2) {
+        printf("Vencedor: %s\n", nome_da_cidade2);
+    } else {
+        printf("Empate!\n");
+    }
+}
 // Lógica de comparação simples
 /*
     printf("**************Coparação das cartas****************\n");
