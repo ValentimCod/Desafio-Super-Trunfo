@@ -1,4 +1,7 @@
 #include <stdio.h>
+// incluindo duas bibliotecas para usar o srand e o rand/ gerar números aleatórios.
+#include <stdlib.h>
+#include <time.h>
 
 // Desafio Super Trunfo - Países
 // Tema 1 - Cadastro das Cartas
@@ -33,6 +36,8 @@ Se a densidade é alta, o inverso será baixo, indicando menos espaço por pesso
 
 // Adicionando mais duas variável para caulcular o super poder das duas cartas
     float SuperPoder1, SuperPoder2;
+
+
 
     printf("Desafio Super Trunfo Cidades\n");
 
@@ -168,13 +173,16 @@ printf("\n");
 
 
 
-
-
-
 //Menu Íterativo
 
-    int opcao1, opcao2;
-    float valor1, valor2;
+    int Atributo1_Carta1, Atributo2_Carta1;
+    int Atributo1_Carta2, Atributo2_Carta2;
+
+    float opcao1_carta1, opcao2_carta1;
+    float opcao1_carta2, opcao2_carta2;
+    
+    double SomadosAtributos_Carta1;
+    double SomadosAtributos_Carta2;
 
     printf("#### Escolha um atributo para a carta 1!!! #####\n");
     printf("--------------------------------------------------------------------------------------------------------\n");
@@ -184,10 +192,23 @@ printf("\n");
     printf("3. Pib\n");
     printf("4. Pontos Turísticos\n");
     printf("5. Densidade Populacional\n");
-    printf("Escolha: ");
-    scanf("%d", &opcao1);
+    printf("Escolha:");
+    printf("\n");
+    scanf("%d", &Atributo1_Carta1);
 
-printf("#### Escolha uma opção para comparar os atributos e definir qual carta será a vencedora !!! #####\n");
+    printf("#### Escolha um segundo atributo para a carta 1 (Diferente do pimeiro!) !!! #####\n");
+    printf("--------------------------------------------------------------------------------------------------------\n");
+    printf("Carta 1\n");
+    printf("1. População\n");
+    printf("2. Área\n");
+    printf("3. Pib\n");
+    printf("4. Pontos Turísticos\n");
+    printf("5. Densidade Populacional\n");
+    printf("Escolha:");
+    printf("\n");
+    scanf("%d", &Atributo2_Carta1);
+
+    printf("#### Escolha um atributo para a carta 2 !!! #####\n");
     printf("--------------------------------------------------------------------------------------------------------\n");
     printf("Carta 2\n");
     printf("1. População\n");
@@ -195,62 +216,171 @@ printf("#### Escolha uma opção para comparar os atributos e definir qual carta
     printf("3. Pib\n");
     printf("4. Pontos Turísticos\n");
     printf("5. Densidade Populacional\n");
-    printf("Escolha:\n");
-    scanf("%d", &opcao2);
+    printf("Escolha:");
+    printf("\n");
+    scanf("%d", &Atributo1_Carta2);
 
-    switch (opcao1){
-case 1:
-    valor1 = populacao1;
+    printf("#### Escolha um segundo atributo para a carta 2 (Diferente do primeiro!) !!! #####\n");
+    printf("--------------------------------------------------------------------------------------------------------\n");
+    printf("Carta 2\n");
+    printf("1. População\n");
+    printf("2. Área\n");
+    printf("3. Pib\n");
+    printf("4. Pontos Turísticos\n");
+    printf("5. Densidade Populacional\n");
+    printf("Escolha:");
+    printf("\n");
+    scanf("%d", &Atributo2_Carta2);
+
+
+    switch (Atributo1_Carta1){
+    case 1:
+    opcao1_carta1 = populacao1;
     break;
-case 2:
-    valor1 = area_em_km1;
+
+    case 2:
+    opcao1_carta1 = area_em_km1;
     break;
-case 3:
-    valor1 = pib1;
+
+    case 3:
+    opcao1_carta1 = pib1;
     break;
-case 4:
-    valor1 = pontos_turisticos1;
+
+    case 4:
+    opcao1_carta1 = pontos_turisticos1;
     break;
-case 5:
-    valor1 =  densidadepopulacao1;
+
+    case 5:
+    opcao1_carta1 =  densidadepopulacao1;
     break;
-default:
+
+    default:
         printf("Opção ínvalida para a carta 1!!!!\n");
     break;
 }
+    if (Atributo1_Carta1 == Atributo1_Carta2)
+    {
+        printf("Você escolheu o mesmo atributo !");    
+    } else {
+    switch (Atributo2_Carta1)
+    {
+    case 1:
+    opcao2_carta1 = populacao1;
+        break;
 
+    case 2:
+    opcao2_carta1 = area_em_km1;
+        break;
 
-    switch (opcao2){
-case 1:
-        valor2 = populacao2;
+    case 3:
+    opcao2_carta1 = pib1;
         break;
-case 2:
-        valor2 = area_em_km2;
+
+    case 4:
+    opcao2_carta1 = pontos_turisticos1;
         break;
-case 3:
-        valor2 = pib2;
+
+    case 5:
+    opcao2_carta1 =  densidadepopulacao1;
         break;
-case 4:
-        valor2 = pontos_turisticos2;
+
+    default:
+            printf("Opção ínvalida para a carta 1!!!!\n");
         break;
-case 5:
-        valor2 = densidadepopulacao2;
+    }
+}
+
+    switch (Atributo1_Carta2){
+    case 1:
+    opcao1_carta2 = populacao2;
         break;
-default:
+
+    case 2:
+    opcao1_carta2 = area_em_km2;
+        break;
+
+    case 3:
+    opcao1_carta2 = pib2;
+        break;
+
+    case 4:
+    opcao1_carta2 = pontos_turisticos2;
+        break;
+
+    case 5:
+    opcao1_carta2 = densidadepopulacao2;
+        break;
+
+    default:
         printf("Opção ínvalida para a carta 2!!!\n");
         break;
 }
+    if (Atributo1_Carta2 == Atributo2_Carta2)
+    {
+        printf("Você escolheu o mesmo atributo !");    
+    } else {
+    switch (Atributo2_Carta2){
+    case 1:
+    opcao2_carta2 = populacao2;
+        break;
+
+    case 2:
+    opcao2_carta2 = area_em_km2;
+        break;
+
+    case 3:
+    opcao2_carta2 = pib2;
+        break;
+
+    case 4:
+    opcao2_carta2 = pontos_turisticos2;
+        break;
+
+    case 5:
+    opcao2_carta2 = densidadepopulacao2;
+        break;
+        
+    default:
+        printf("Opção ínvalida para a carta 2!!!\n");
+        break;
+    }
+}
+
 
 
 //*******************Comparação dos atributos das Cartas***************
 
-    printf("\nComparação entre:\n");
-    printf("%s (atributo %d): %.2f vs %s (atributo %d): %.2f\n",nome_da_cidade1, opcao1, valor1, nome_da_cidade2, opcao2, valor2);
+    printf("\nComparação entre os atrbutos escolhidos de cada carta:\n");
+    printf("%s (Pimeiro Atributo %d): %.2f + (Segundo Atributo %d): %.2f\n", nome_da_cidade1, Atributo1_Carta1, Atributo2_Carta1 , opcao1_carta1, opcao2_carta1);
+    printf("%s (Pimeiro Atributo %d): %.2f + (Segundo Atributo %d): %.2f\n", nome_da_cidade2, Atributo1_Carta2, Atributo2_Carta2 , opcao1_carta2, opcao2_carta2);
 
-// Implementando a lógica de comparação com if-else !!!
+//*******************Soma dos Atributos***************************
+    SomadosAtributos_Carta1 = opcao1_carta1 + opcao2_carta1;
+    SomadosAtributos_Carta2 = opcao1_carta2 + opcao2_carta2;
+    printf("Soma dos Atributos da Carta 1 = %.2f\n", SomadosAtributos_Carta1);
+    printf("Soma dos atributos da Carta 2 = %.2f\n", SomadosAtributos_Carta2);
 
-if (opcao1 == 5 || opcao2 == 5) { // Comparação especial para densidade demográfica
-    if (valor1 < valor2) {
+//Implementando o operador ternáro
+//Verificando se algum atributo escolhido é Densidade Demográfica (opção 5)
+double temDensidade = (opcao1_carta1 == 5 || opcao2_carta1 == 5 || opcao1_carta2 == 5 || opcao2_carta2 == 5);
+
+char* vencedor;
+
+    if (SomadosAtributos_Carta1 == SomadosAtributos_Carta2) {
+        vencedor = "Empate!";
+
+    } else if (temDensidade) { // Se algum dos atributos for densidade, vence o menor valor
+        vencedor = (SomadosAtributos_Carta1 < SomadosAtributos_Carta2) ? "Carta 1" : "Carata 2";
+    } else { // Para os demais atributos, vence o maior valor
+        vencedor = (SomadosAtributos_Carta1 > SomadosAtributos_Carta2) ?  "Carta 1" : "Carata 2";
+    }
+
+    printf("Vencedor: %s\n", vencedor);
+    
+//lógica de comparação com if-else !!!
+/*
+    if (opcao1 == 5 || opcao2 == 5) { // Comparação especial para densidade demográfica
+        if (valor1 < valor2) {
         printf("Vencedor: %s\n", nome_da_cidade1);
     } else if (valor1 > valor2) {
         printf("Vencedor: %s\n", nome_da_cidade2);
@@ -312,5 +442,6 @@ if (opcao1 == 5 || opcao2 == 5) { // Comparação especial para densidade demogr
 
 printf("------------------------------\n");
   
-    return 0;
+return 0;
+
 }
