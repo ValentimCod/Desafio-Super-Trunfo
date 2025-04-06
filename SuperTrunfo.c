@@ -1,7 +1,4 @@
 #include <stdio.h>
-// incluindo duas bibliotecas para usar o srand e o rand/ gerar números aleatórios.
-#include <stdlib.h>
-#include <time.h>
 
 // Desafio Super Trunfo - Países
 // Tema 1 - Cadastro das Cartas
@@ -351,8 +348,8 @@ printf("\n");
 //*******************Comparação dos atributos das Cartas***************
 
     printf("\nComparação entre os atrbutos escolhidos de cada carta:\n");
-    printf("%s (Pimeiro Atributo %d): %.2f + (Segundo Atributo %d): %.2f\n", nome_da_cidade1, Atributo1_Carta1, Atributo2_Carta1 , opcao1_carta1, opcao2_carta1);
-    printf("%s (Pimeiro Atributo %d): %.2f + (Segundo Atributo %d): %.2f\n", nome_da_cidade2, Atributo1_Carta2, Atributo2_Carta2 , opcao1_carta2, opcao2_carta2);
+    printf("%s (Pimeiro Atributo %d): %.2f + (Segundo Atributo %d): %.2f\n", nome_da_cidade1, Atributo1_Carta1, opcao1_carta1  ,Atributo2_Carta1 , opcao2_carta1);
+    printf("%s (Pimeiro Atributo %d): %.2f + (Segundo Atributo %d): %.2f\n", nome_da_cidade2, Atributo1_Carta2, opcao1_carta2  ,Atributo2_Carta2 , opcao2_carta2);
 
 //*******************Soma dos Atributos***************************
     SomadosAtributos_Carta1 = opcao1_carta1 + opcao2_carta1;
@@ -370,9 +367,9 @@ char* vencedor;
         vencedor = "Empate!";
 
     } else if (temDensidade) { // Se algum dos atributos for densidade, vence o menor valor
-        vencedor = (SomadosAtributos_Carta1 < SomadosAtributos_Carta2) ? "Carta 1" : "Carata 2";
+        vencedor = (SomadosAtributos_Carta1 < SomadosAtributos_Carta2) ? "Carta 1" : "Carta 2";
     } else { // Para os demais atributos, vence o maior valor
-        vencedor = (SomadosAtributos_Carta1 > SomadosAtributos_Carta2) ?  "Carta 1" : "Carata 2";
+        vencedor = (SomadosAtributos_Carta1 > SomadosAtributos_Carta2) ?  "Carta 1" : "Carta 2";
     }
 
     printf("Vencedor: %s\n", vencedor);
